@@ -2,5 +2,12 @@
 
 :root {
     --color-praimary: #f0f;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     
+}
+body{
+    background: #000;
+    color: #fff;
 }
