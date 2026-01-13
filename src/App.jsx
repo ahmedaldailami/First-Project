@@ -3,6 +3,9 @@ import { HeroSection } from "./components/HeroSection"
 import Particles from "./components/Particles"
 import PillNav from "./components/PillNav"
 import { AnimatePresence, motion } from "framer-motion";
+import { log } from "three";
+import './App.css'
+
 // import { Sun, Moon } from "lucide-react";
 
 
@@ -24,6 +27,8 @@ function App() {
       document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
+    console.log(theme);
+
   }, [theme]);
 
 
@@ -71,24 +76,24 @@ function App() {
       </header>
 
 
-      <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} >
+      <button className=" relative z-50" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} >
         {theme}
       </button>
-      
+
 
       {/* Theme Toggle Button */}
-      <div className="bg-amber-400">
+      <div className="bg-amber-400 relative z-50">
 
-      <motion.button
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="p-2 bg-amber-50 rounded-full text-sm font-semibold
+        <motion.button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-2 bg-amber-50 rounded-full text-sm font-semibold
               hover:bg-pink-400 dark:hover:bg-pink-800 transition-colors
                hidden md:block"
         // whileHover={{ scale: 1.1 }}
         // whileTap={{ scale: 0.9 }}
-      >
+        >
 
-        {/* <AnimatePresence mode="wait" initial={false}> */}
+          {/* <AnimatePresence mode="wait" initial={false}> */}
           {theme === "dark" ? (
             <motion.div
               key="moon"
@@ -97,7 +102,7 @@ function App() {
               exit={{ y: 20, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              
+
               {/* <Moon size={20} className="text-gray-800 dark:text-white" /> */}
               <span>dark</span>
             </motion.div>
@@ -110,12 +115,12 @@ function App() {
               transition={{ duration: 0.2 }}
             >
               {/* <Sun size={20} className="text-gray-800 dark:text-white" /> */}
-                <span>light</span>
+              <span>light</span>
 
             </motion.div>
           )}
-        {/* </AnimatePresence> */}
-      </motion.button>
+          {/* </AnimatePresence> */}
+        </motion.button>
 
       </div>
 
