@@ -34,9 +34,8 @@ function App() {
 
 
 
-
+      {/*                  Header                 */}
       <header className="flex justify-center">
-
         <PillNav
           logo={"logo.svg"}
           logoAlt="Company Logo"
@@ -57,7 +56,7 @@ function App() {
       </header>
 
 
-{/* 
+      {/* 
       <div
         ref={containerRef}
         style={{ position: 'relative' }}
@@ -79,7 +78,7 @@ function App() {
 
 
 
-      {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem officia iusto sunt aliquid ex doloremque molestiae, vero esse saepe? Ab quia adipisci eligendi nulla. Unde illo provident earum modi suscipit.</p> */}
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem officia iusto sunt aliquid ex doloremque molestiae, vero esse saepe? Ab quia adipisci eligendi nulla. Unde illo provident earum modi suscipit.</p>
     </>
   )
 }
