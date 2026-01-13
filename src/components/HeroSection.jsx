@@ -6,7 +6,7 @@ export const HeroSection = () => {
     <motion.div
       id="hero"
       className="text-foreground bg-transparent flex flex-col md:flex-row 
-      items-center justify-center max-w-7xl mx-auto w-full"
+      items-center justify-center max-w-7xl mx-auto w-full py-10"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,

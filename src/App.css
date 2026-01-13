@@ -11,7 +11,7 @@
 
 
 
-@font-face {
+/* @font-face {
     font-family: "Geist Sans";
     src: url("../node_modules/@vercel/fonts/geist-sans/GeistSans-Regular.woff2") format("woff2");
     font-weight: 400;
@@ -30,7 +30,7 @@
     src: url("../node_modules/@vercel/fonts/geist-sans/GeistSans-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
-}
+} */
 
 
 * {

@@ -10,7 +10,7 @@ const PillNav = ({
     className = '',
     ease = 'power3.easeOut',
     baseColor = '#fff',
-    pillColor = '#060010',
+    pillColor = '#000',
     hoveredPillTextColor = '#060010',
     pillTextColor,
     onMobileMenuClick,
@@ -28,6 +28,22 @@ const PillNav = ({
     const navItemsRef = useRef(null);
     const logoRef = useRef(null);
 
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
+
+
+    // Theme toggle
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+        localStorage.setItem("theme", theme);
+        console.log(theme);
+
+    }, [theme]);
     useEffect(() => {
         const layout = () => {
             circleRefs.current.forEach(circle => {
@@ -367,7 +383,23 @@ const PillNav = ({
                             );
                         })}
                     </ul>
+
+
+                    {/* Theme Toggle Button */}
+                    <button
+                        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                        className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+                        style={{
+                            width: 'var(--nav-h)',
+                            height: 'var(--nav-h)',
+                            background: 'var(--base, #000)'
+                        }}
+                    >
+                        {theme}
+                    </button>
+
                 </div>
+
 
                 <button
                     ref={hamburgerRef}
@@ -447,6 +479,18 @@ const PillNav = ({
                         );
                     })}
                 </ul>
+                {/* Theme Toggle Button */}
+                <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+                    style={{
+                        width: 'var(--nav-h)',
+                        height: 'var(--nav-h)',
+                        background: 'var(--base, #000)'
+                    }}
+                >
+                    {theme}
+                </button>
             </div>
         </div>
     );
