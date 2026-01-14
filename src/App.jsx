@@ -2,6 +2,9 @@ import { HeroSection } from "./components/HeroSection"
 import Particles from "./components/Particles"
 import PillNav from "./components/PillNav"
 import './App.css'
+import ScrambledText from "./components/text/ScrambledText"
+import ScrollFloat from "./components/text/ScrollFloat"
+import { AboutSection } from "./components/AboutSection"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -55,8 +58,25 @@ function App() {
         />
       </header>
 
-
       <HeroSection />
+      <AboutSection />
+
+
+
+     
+
+{/* 
+      <ScrambledText
+        className="scrambled-text-demo"
+        radius={100}
+        duration={1.2}
+        speed={0.5}
+        scrambleChars={".:;!?"}
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Similique pariatur dignissimos porro eius quam doloremque
+        et enim velit nobis maxime.
+      </ScrambledText> */}
 
       {/* <section className="container m-auto min-h-dvh flex items-center ">
         

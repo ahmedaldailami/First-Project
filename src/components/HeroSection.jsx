@@ -6,7 +6,7 @@ export const HeroSection = () => {
     <motion.div
       id="hero"
       className="text-foreground bg-transparent flex flex-col md:flex-row 
-      items-center justify-center max-w-7xl mx-auto w-full py-10"
+      items-center justify-center max-w-7xl mx-auto w-full py-10 sm:py-30"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -32,9 +32,8 @@ export const HeroSection = () => {
             transition: { duration: 0.8, ease: "easeOut" },
           }}
         >
-          Scarlett Rose
           <motion.span
-            className="text-sm text-pink-500 font-semibold block"
+            className="text-sm text-blue-600 font-semibold block"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
             animate={{
               opacity: 1,
@@ -43,8 +42,9 @@ export const HeroSection = () => {
               transition: { duration: 0.8, ease: "easeOut" },
             }}
           >
-            She / Her
+            Hi, I'm
           </motion.span>
+          Ahmed Aldailami
         </motion.h1>
 
         <motion.h2
@@ -57,7 +57,7 @@ export const HeroSection = () => {
             transition: { duration: 0.8, ease: "easeOut" },
           }}
         >
-          Experienced Designer & Full-Stack Developer
+          Front-End Developer & Graphic Designer
         </motion.h2>
 
         <motion.p
@@ -76,21 +76,8 @@ export const HeroSection = () => {
           audiences. Passionate about blending creativity with technology to
           bring ideas to life.
         </motion.p>
-{/* 
-        <motion.div
-          className="flex flex-wrap justify-center md:justify-start gap-2"
-          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            transition: { duration: 0.8, ease: "easeOut" },
-          }}
-        >
-          <Badge className="text-xs bg-pink-500">Team Lead</Badge>
-          <Badge className="text-xs bg-pink-500">Problem Solving</Badge>
-          <Badge className="text-xs bg-pink-500">Decision Making</Badge>
-        </motion.div> */}
+
+
       </motion.div>
 
       {/* Right Section */}

@@ -41,7 +41,6 @@ const PillNav = ({
             document.documentElement.classList.remove("dark");
         }
         localStorage.setItem("theme", theme);
-        console.log(theme);
 
     }, [theme]);
     useEffect(() => {
