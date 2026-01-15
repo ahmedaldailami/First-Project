@@ -5,6 +5,7 @@ import './App.css'
 import ScrambledText from "./components/text/ScrambledText"
 import ScrollFloat from "./components/text/ScrollFloat"
 import { AboutSection } from "./components/AboutSection"
+import { ProjectsSection } from "./components/ProjectsSection"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -25,7 +26,7 @@ function App() {
     <>
       {/*            Background            */}
       <Particles
-        particleColors={['#ffffff', '#ffffff']}
+        particleColors={['#00f', '#0f0']}
         particleCount={200}
         particleSpread={10}
         speed={0.1}
@@ -60,6 +61,7 @@ function App() {
 
       <HeroSection />
       <AboutSection />
+      <ProjectsSection />
 
 
 

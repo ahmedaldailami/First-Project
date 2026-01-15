@@ -12,6 +12,7 @@ export const AboutSection = () => {
   };
 
 
+
   return (
     <section id="about" className="py-30 px-4 relative">
       {" "}

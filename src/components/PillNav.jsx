@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
+import { useTranslation } from 'react-i18next';
 
 const PillNav = ({
     logo,
@@ -43,6 +44,28 @@ const PillNav = ({
         localStorage.setItem("theme", theme);
 
     }, [theme]);
+
+
+
+
+    // change lang
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+        document.dir = lang === "ar" ? "rtl" : "ltr";
+        document.documentElement.lang = lang;
+        console.log(lang);
+    };
+
+    const languages = [
+        { code: "en", name: "English", falg: "USA" },
+        { code: "ar", name: "Arabic", falg: "YEM" },
+    ];
+
+
+
+
     useEffect(() => {
         const layout = () => {
             circleRefs.current.forEach(circle => {
@@ -396,6 +419,38 @@ const PillNav = ({
                     >
                         {theme}
                     </button>
+
+
+
+
+
+                    <div className="glass-radio-group">
+                        <input defaultChecked={false} type="radio" name="plan" />
+                        <label
+                            onClick={() => changeLanguage(languages[1].code)}
+                        >
+                            {t("navbar.langAR")}
+                        </label>
+
+                        <input defaultChecked={true} type="radio" name="plan" id="glass-platinum" />
+                        <label
+                            onClick={() => changeLanguage(languages[0].code)}
+                            htmlFor="glass-platinum"
+                        >
+                            {t("navbar.langEN")}
+                        </label>
+
+                        <div className="glass-glider"></div>
+                    </div>
+
+
+
+
+
+
+
+
+
 
                 </div>
 
