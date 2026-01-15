@@ -8,6 +8,7 @@ import { AboutSection } from "./components/AboutSection"
 import { ProjectsSection } from "./components/ProjectsSection"
 import MagicBento from "./components/MagicBento"
 import TiltedCard from "./components/TiltedCard"
+import DomeGallery from "./components/DomeGallery"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -66,8 +67,12 @@ function App() {
       <ProjectsSection />
 
 
+      <div style={{ width: '100%', height: '100vh' }}>
+        <DomeGallery />
+      </div>
 
 
+{/* 
       <MagicBento
         textAutoHide={true}
         enableStars={true}
@@ -79,7 +84,7 @@ function App() {
         spotlightRadius={300}
         particleCount={12}
         glowColor="132, 0, 255"
-      />
+      /> */}
 
 
 
