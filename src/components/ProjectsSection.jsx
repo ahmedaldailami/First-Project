@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import MagicBento from "./MagicBento";
 import TiltedCard from "./TiltedCard";
 import { motion } from "framer-motion";
+import BlurText from "./text/BlurText";
 
 
 
@@ -78,6 +79,22 @@ export const ProjectsSection = () => {
           <span className="text-primary"> {t("projectss.title2")}</span>
         </h2> */}
 
+        <div className="mb-12 flex justify-center ">
+          <BlurText
+            text={t("projects.title1")}
+            delay={150}
+            animateBy="litter"
+            direction="top"
+            className="text-3xl mb-8 md:text-4xl font-bold"
+          />
+          <BlurText
+            text={t("projects.title2")}
+            delay={150}
+            animateBy="litters"
+            direction="top"
+            className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+          />
+        </div>
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category, key) => (
             <button
@@ -149,7 +166,7 @@ export const ProjectsSection = () => {
                         </a>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mt-2">
                       {project.tags.map((tag, i) => (
                         <span key={i} className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
                           {tag}
@@ -162,6 +179,16 @@ export const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* <div className="text-center mt-12">
+          <a
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            target="_blank"
+            href="https://github.com/anassultanali"
+          >
+            {t("projects.btn")} {lang === "en" ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
+          </a>
+        </div> */}
 
         
       </div>

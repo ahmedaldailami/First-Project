@@ -26,7 +26,7 @@ i18n.use(initReactI18next).init({
           scroll: "Scroll",
         },
         about: {
-          title1: "About",
+          title1: "About ",
           title2: "Me",
           subTitle: "Web Developer & Tech Creator",
           subtitles1: "",
@@ -54,7 +54,7 @@ i18n.use(initReactI18next).init({
           tools: "Tools",
         },
         projects: {
-          title1: "Featured",
+          title1: "Featured ",
           title2: "Projects",
           all: "All",
           sub: "Here are some of my recent projects. Each project was carefully crafted with attention to detail, performance, and user experience.",
@@ -124,7 +124,7 @@ i18n.use(initReactI18next).init({
           scroll: "اكتشف المزيد",
         },
         about: {
-          title1: "نبذة",
+          title1: "نبذة ",
           title2: "عني",
           subTitle: "مطور مواقع إلكترونية ومبتك تقنيات",
           subtitles1: "",

@@ -7,9 +7,6 @@ export const AboutSection = () => {
   const { t } = useTranslation();
   const lang = document.documentElement.lang;
 
-  const handleAnimationComplete = () => {
-    console.log('Animation completed!');
-  };
 
 
 
@@ -19,19 +16,17 @@ export const AboutSection = () => {
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12 flex justify-center ">
           <BlurText
-            text=" About"
+            text={t("about.title1")}
             delay={150}
             animateBy="litter"
             direction="top"
-            onAnimationComplete={handleAnimationComplete}
             className="text-3xl mb-8 md:text-4xl font-bold"
           />
           <BlurText
-            text=" Me"
+            text={t("about.title2")}
             delay={500}
             animateBy="litters"
             direction="top"
-            onAnimationComplete={handleAnimationComplete}
             className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
           />
         </div>
@@ -48,10 +43,11 @@ export const AboutSection = () => {
               scrollEnd='bottom bottom-=40%'
               stagger={0.03}
             >
+              {/* {t("about.subTitle")} */}
               Front-End Developer & Graphic Designer
             </ScrollFloat>
 
-            <p className="text-muted-foreground">I'm passionate about creating elegant solutions to complex problems, and I'm constantly learning new technologies and techniques to stay at the forefront of the ever-evolving web landscape.</p>
+            <p className="text-muted-foreground">{t("about.subtitles2")}</p>
 
             {/* <p className="text-muted-foreground">{t("about.subtitles2")}</p> */}
 
