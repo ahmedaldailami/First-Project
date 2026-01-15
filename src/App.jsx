@@ -6,6 +6,8 @@ import ScrambledText from "./components/text/ScrambledText"
 import ScrollFloat from "./components/text/ScrollFloat"
 import { AboutSection } from "./components/AboutSection"
 import { ProjectsSection } from "./components/ProjectsSection"
+import MagicBento from "./components/MagicBento"
+import TiltedCard from "./components/TiltedCard"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -65,6 +67,25 @@ function App() {
 
 
 
+
+      <MagicBento
+        textAutoHide={true}
+        enableStars={true}
+        enableSpotlight={true}
+        enableBorderGlow={true}
+        enableTilt={true}
+        enableMagnetism={true}
+        clickEffect={true}
+        spotlightRadius={300}
+        particleCount={12}
+        glowColor="132, 0, 255"
+      />
+
+
+
+
+
+   
      
 
 {/* 
