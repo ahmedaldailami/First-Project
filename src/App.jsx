@@ -9,6 +9,7 @@ import { ProjectsSection } from "./components/ProjectsSection"
 import MagicBento from "./components/MagicBento"
 import TiltedCard from "./components/TiltedCard"
 import DomeGallery from "./components/DomeGallery"
+import { GallarySection } from "./components/GallarySection"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -16,10 +17,6 @@ import DomeGallery from "./components/DomeGallery"
 
 
 function App() {
-
-
-
-
 
 
 
@@ -65,14 +62,12 @@ function App() {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
+      <GallarySection />
 
 
-      <div style={{ width: '100%', height: '100vh' }}>
-        <DomeGallery />
-      </div>
 
 
-{/* 
+      {/* 
       <MagicBento
         textAutoHide={true}
         enableStars={true}
@@ -90,10 +85,10 @@ function App() {
 
 
 
-   
-     
 
-{/* 
+
+
+      {/* 
       <ScrambledText
         className="scrambled-text-demo"
         radius={100}
