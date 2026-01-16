@@ -27,11 +27,39 @@ const DEFAULT_IMAGES = [
         alt: 'Social media image'
     },
     {
-        src: "/public/gallary/Sample Image for Soft Focus Cinematic copy.jpg",
+        src: "/public/gallary/Nomber one.jpg",
         alt: 'Social media image'
     },
     {
-        src: "/public/gallary/Nomber one.jpg",
+        src: "/public/gallary/مخبوز عروض رمضان copy.jpg",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/مخبوز.jpg",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/عبدالرحمن1.png",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/Untitled-1.png",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/cofee.jpg",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/الهبري.png",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/osama soft.png",
+        alt: 'Social media image'
+    },
+    {
+        src: "/public/gallary/road.jpg",
         alt: 'Social media image'
     }
 ];
