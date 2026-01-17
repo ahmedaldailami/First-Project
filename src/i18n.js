@@ -49,7 +49,7 @@ i18n.use(initReactI18next).init({
           },
         },
         skills: {
-          title1: "My",
+          title1: "My ",
           title2: "Skills",
           all: "All",
           tools: "Tools",
@@ -147,7 +147,7 @@ i18n.use(initReactI18next).init({
           },
         },
         skills: {
-          title1: "المهارات &",
+          title1: "المهارات & ",
           title2: "التفنيات",
           all: "الكل",
           tools: "التفنيات",

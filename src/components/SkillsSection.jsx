@@ -15,6 +15,7 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-30 px-4 relative">
 
+      {/*          start Section Header         */}
       <div className="mb-12 flex justify-center ">
         {lang === "en" ?
           <>
@@ -52,6 +53,7 @@ export const SkillsSection = () => {
           </>
         }
       </div>
+      {/*           End Section Header         */}
 
       <Marquee />
 

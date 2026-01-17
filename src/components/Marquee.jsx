@@ -33,7 +33,7 @@ export const Marquee = () => {
                             {trustedLogosText.concat(trustedLogosText).map((logo, i) => (
                                 <span
                                     key={i}
-                                    className="mx-6 text-sm md:text-base font-semibold text-forground hover:text-gray-300 tracking-wide transition-colors"
+                                    className="mx-2 text-sm md:text-base font-semibold text-forground hover:text-gray-300 tracking-wide transition-colors"
                                 >
                                     {logo}
                                 </span>

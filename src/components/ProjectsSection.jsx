@@ -95,6 +95,8 @@ export const ProjectsSection = () => {
   return (
     <section id="projectss" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
+
+        {/*           start Section Header         */}
         <div className="mb-12 flex justify-center ">
           {lang === "en" ?
             <>
@@ -132,7 +134,9 @@ export const ProjectsSection = () => {
             </>
           }
         </div>
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/*           End Section Header         */}
+
+        <div className="flex flex-wrap justify-center md:gap-4 mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
@@ -150,22 +154,22 @@ export const ProjectsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-         
-         
-         
-         
+
+
+
+
           {filteredprojects.map((project, key) => (
-              <motion.div
+            <motion.div
               key={key}
-                className="rounded-lg overflow-hidden shadow-xs"
-                initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  filter: "blur(0px)",
-                }}
-                transition={{ delay: 0.1, duration: 1.2, ease: "easeOut" }}
-              >
+              className="rounded-lg overflow-hidden shadow-xs"
+              initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                filter: "blur(0px)",
+              }}
+              transition={{ delay: 0.1, duration: 1.2, ease: "easeOut" }}
+            >
               <TiltedCard
                 imageSrc={project.image}
                 altText="Kendrick Lamar - GNX Album Cover"
@@ -227,7 +231,7 @@ export const ProjectsSection = () => {
           </a>
         </div> */}
 
-        
+
       </div>
     </section>
   );
