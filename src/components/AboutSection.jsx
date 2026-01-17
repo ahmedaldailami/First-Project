@@ -2,12 +2,13 @@
 import { useTranslation } from "react-i18next";
 import ScrollFloat from "./text/ScrollFloat";
 import BlurText from "./text/BlurText";
+import { motion } from "framer-motion";
 
 export const AboutSection = () => {
   const { t } = useTranslation();
   const lang = document.documentElement.lang;
 
-
+ 
 
 
   return (
@@ -138,6 +139,7 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
+     
     </section >
   );
 };

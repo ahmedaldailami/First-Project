@@ -95,27 +95,6 @@ export const ProjectsSection = () => {
   return (
     <section id="projectss" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        {/* <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          {t("projectss.title1")}{" "}
-          <span className="text-primary"> {t("projectss.title2")}</span>
-        </h2> */}
-
-        {/* <div className="mb-12 flex justify-center ">
-          <BlurText
-            text={t("projects.title1")}
-            delay={150}
-            animateBy="litter"
-            direction="top"
-            className="text-3xl mb-8 md:text-4xl font-bold"
-          />
-          <BlurText
-            text={t("projects.title2")}
-            delay={150}
-            animateBy="litters"
-            direction="top"
-            className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-          />
-        </div> */}
         <div className="mb-12 flex justify-center ">
           {lang === "en" ?
             <>

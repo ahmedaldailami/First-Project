@@ -10,7 +10,7 @@ import MagicBento from "./components/MagicBento"
 import TiltedCard from "./components/TiltedCard"
 import DomeGallery from "./components/DomeGallery"
 import { GallarySection } from "./components/GallarySection"
-
+import { SkillsSection } from "./components/SkillsSection"
 // import { Sun, Moon } from "lucide-react";
 
 
@@ -18,7 +18,7 @@ import { GallarySection } from "./components/GallarySection"
 
 function App() {
 
-
+ 
 
 
 
@@ -60,7 +60,13 @@ function App() {
       </header>
 
       <HeroSection />
+
+   
+
+
+
       <AboutSection />
+      <SkillsSection />
       <ProjectsSection />
       <GallarySection />
 
