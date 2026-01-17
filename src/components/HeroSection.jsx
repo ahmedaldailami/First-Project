@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 export const HeroSection = () => {
   const { t } = useTranslation();
+  const lang = document.documentElement.lang;
 
 
 
@@ -11,7 +12,7 @@ export const HeroSection = () => {
     <motion.div
       id="hero"
       className="text-foreground bg-transparent flex flex-col md:flex-row 
-      items-center justify-center max-w-7xl mx-auto w-full py-10 sm:py-30"
+      items-center justify-center max-w-7xl mx-auto w-full my-15 sm:py-30"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -24,7 +25,7 @@ export const HeroSection = () => {
     >
       {/* Left Section */}
       <motion.div
-        className="flex-1 space-y-4 p-6 text-left md:text-left"
+        className={`flex-1 space-y-4 p-6  ${lang === "en" ? "text-left" : "text-right"}`}
         initial={false} // so it inherits parent animation
       >
         <motion.h1
@@ -47,7 +48,7 @@ export const HeroSection = () => {
               transition: { duration: 0.8, ease: "easeOut" },
             }}
           >
-            Hi, I'm
+            {t("hero.welcome")}
           </motion.span>
           {t("hero.fName")}
           {t("hero.lName")}
@@ -63,7 +64,8 @@ export const HeroSection = () => {
             transition: { duration: 0.8, ease: "easeOut" },
           }}
         >
-          Front-End Developer & Graphic Designer
+          {t("hero.subtitle")}
+          {/* Front-End Developer & Graphic Designer */}
         </motion.h2>
 
         <motion.p
@@ -85,7 +87,6 @@ export const HeroSection = () => {
 
 
       </motion.div>
-
       {/* Right Section */}
       <motion.div
         className="flex-1 flex justify-center p-6"

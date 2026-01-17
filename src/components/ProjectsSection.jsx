@@ -10,6 +10,7 @@ import BlurText from "./text/BlurText";
 
 export const ProjectsSection = () => {
   const { t } = useTranslation();
+  const lang = document.documentElement.lang;
 
   const projects = [
     {
@@ -99,7 +100,7 @@ export const ProjectsSection = () => {
           <span className="text-primary"> {t("projectss.title2")}</span>
         </h2> */}
 
-        <div className="mb-12 flex justify-center ">
+        {/* <div className="mb-12 flex justify-center ">
           <BlurText
             text={t("projects.title1")}
             delay={150}
@@ -114,6 +115,43 @@ export const ProjectsSection = () => {
             direction="top"
             className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
           />
+        </div> */}
+        <div className="mb-12 flex justify-center ">
+          {lang === "en" ?
+            <>
+              <BlurText
+                text={t("projects.title1")}
+                delay={150}
+                animateBy="litter"
+                direction="top"
+                className="text-3xl mb-8 md:text-4xl font-bold"
+              />
+              <BlurText
+                text={t("projects.title2")}
+                delay={200}
+                animateBy="litters"
+                direction="bottom"
+                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+              />
+            </>
+            :
+            <>
+              <BlurText
+                text={t("projects.title1")}
+                delay={500}
+                animateBy="words"
+                direction="top"
+                className="text-3xl mb-8 md:text-4xl font-bold"
+              />
+              <BlurText
+                text={t("projects.title2")}
+                delay={500}
+                animateBy="words"
+                direction="bottom"
+                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+              />
+            </>
+          }
         </div>
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category, key) => (

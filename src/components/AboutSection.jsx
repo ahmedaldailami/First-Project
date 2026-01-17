@@ -15,37 +15,55 @@ export const AboutSection = () => {
       {" "}
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12 flex justify-center ">
-          <BlurText
-            text={t("about.title1")}
-            delay={150}
-            animateBy="litter"
-            direction="top"
-            className="text-3xl mb-8 md:text-4xl font-bold"
-          />
-          <BlurText
-            text={t("about.title2")}
-            delay={500}
-            animateBy="litters"
-            direction="top"
-            className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-          />
+          {lang === "en" ?
+            <>
+              <BlurText
+                text={t("about.title1")}
+                delay={150}
+                animateBy="litter"
+                direction="top"
+                className="text-3xl mb-8 md:text-4xl font-bold"
+              />
+              <BlurText
+                text={t("about.title2")}
+                delay={500}
+                animateBy="litters"
+                direction="bottom"
+                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+              />
+            </>
+            :
+            <>
+              <BlurText
+                text={t("about.title1")}
+                delay={500}
+                animateBy="words"
+                direction="top"
+                className="text-3xl mb-8 md:text-4xl font-bold"
+              />
+              <BlurText
+                text={t("about.title2")}
+                delay={500}
+                animateBy="words"
+                direction="bottom"
+                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+              />
+            </>
+}
         </div>
-        {/* <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            About {" "}
-            <span className="text-primarylw"> Me</span>
-          </h2> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <ScrollFloat
-              animationDuration={1}
-              ease='back.inOut(2)'
-              scrollStart='center bottom+=50%'
-              scrollEnd='bottom bottom-=40%'
-              stagger={0.03}
-            >
-              {/* {t("about.subTitle")} */}
-              Front-End Developer & Graphic Designer
-            </ScrollFloat>
+            {lang === "en" ?
+              <ScrollFloat
+                animationDuration={1}
+                ease='back.inOut(2)'
+                scrollStart='center bottom+=50%'
+                scrollEnd='bottom bottom-=40%'
+                stagger={0.03}
+              >
+                {t("about.subTitle")}
+              </ScrollFloat> : <h3 className="text-3xl font-bold">{t("about.subTitle")}</h3>
+            }
 
             <p className="text-muted-foreground">{t("about.subtitles2")}</p>
 
@@ -55,16 +73,14 @@ export const AboutSection = () => {
               <a href="#contact" className="px-6 py-2 rounded-full border border-primarylw text-primarylw hover:scale-110 duration-500"
               >
                 {" "}
-                Get In Touch
-                {/* {t("about.contactBtn")} */}
+                {t("about.contactBtn")}
               </a>
 
               <a
                 href=""
                 className="px-6 py-2 rounded-full border border-primarylw hover:scale-110 duration-500"
               >
-                Dounload CV
-                {/* {t("about.CVbtn")} */}
+                {t("about.CVbtn")}
               </a>
             </div>
           </div>
@@ -122,6 +138,6 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
