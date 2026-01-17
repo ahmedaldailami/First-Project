@@ -49,7 +49,8 @@ export const HeroSection = () => {
           >
             Hi, I'm
           </motion.span>
-          t("hero.lName")
+          {t("hero.fName")}
+          {t("hero.lName")}
         </motion.h1>
 
         <motion.h2

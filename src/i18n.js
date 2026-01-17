@@ -18,8 +18,8 @@ i18n.use(initReactI18next).init({
         },
         hero: {
           welcome: "Hi, I'm",
-          fName: "Anas",
-          lName: "Sultan",
+          fName: "Ahmed ",
+          lName: "Aldailami",
           subtitles:
             "I create stellar web experiences with modern technologies. Specializing in front-end development, I build interfaces that are both beautiful and functional.",
           heroBtn: "View My Work",
@@ -117,8 +117,8 @@ i18n.use(initReactI18next).init({
         },
         hero: {
           welcome: "مرحباً، أنا",
-          fName: "أنس",
-          lName: "سلطان👋",
+          fName: " أحمد",
+          lName: " الديلمي ",
           subtitles: `مطوّر واجهات أمامية وخلفية أبني مواقع ويب حديثة باستخدام React ⚛️ و Laravel 🛠️   `,
           heroBtn: "عرض أعمالي",
           scroll: "اكتشف المزيد",
