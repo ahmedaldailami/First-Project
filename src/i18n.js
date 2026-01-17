@@ -8,8 +8,8 @@ i18n.use(initReactI18next).init({
         navbar: {
           langEN: "English",
           langAR: "Arabic",
-          logoW: "Anas",
-          logoP: "Sultan",
+          logoW: "Ahmed",
+          logoP: "Aldailami",
           home: "Home",
           about: "About",
           skills: "Skills",

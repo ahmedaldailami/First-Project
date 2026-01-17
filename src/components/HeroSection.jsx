@@ -1,7 +1,12 @@
 // import { Badge } from "../lightswind/badge";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const HeroSection = () => {
+  const { t } = useTranslation();
+
+
+
   return (
     <motion.div
       id="hero"
@@ -44,7 +49,7 @@ export const HeroSection = () => {
           >
             Hi, I'm
           </motion.span>
-          Ahmed Aldailami
+          t("hero.lName")
         </motion.h1>
 
         <motion.h2
