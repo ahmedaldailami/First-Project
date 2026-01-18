@@ -11,6 +11,11 @@ import TiltedCard from "./components/TiltedCard"
 import DomeGallery from "./components/DomeGallery"
 import { GallarySection } from "./components/GallarySection"
 import { SkillsSection } from "./components/SkillsSection"
+import { AnimatePresence } from "motion/react"
+import Dock from "./components/dock"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+
 // import { Sun, Moon } from "lucide-react";
 
 
@@ -18,9 +23,68 @@ import { SkillsSection } from "./components/SkillsSection"
 
 function App() {
 
- 
+  const [showDock, setShowDock] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
 
+  // Track scroll direction
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        // scrolling down -> show Dock
+        setShowDock(true);
+      } else {
+        // scrolling up -> hide Dock
+        setShowDock(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+
+  // Helper for smooth scroll
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+
+  // Dock items
+  const dockItems = [
+    {
+      // icon: <Home size={24} />,
+      label: "Home",
+      onClick: () => scrollToSection("home"),
+    },
+    {
+      // icon: <User size={24} />,
+      label: "About",
+      onClick: () => scrollToSection("about"),
+    },
+    {
+      // icon: <GraduationCap size={24} />,
+      label: "Education",
+      onClick: () => scrollToSection("education"),
+    },
+    {
+      // icon: <Briefcase size={24} />,
+      label: "Career",
+      onClick: () => scrollToSection("career"),
+    },
+    {
+      // icon: <FolderKanban size={24} />,
+      label: "Projects",
+      onClick: () => scrollToSection("projects"),
+    },
+  ];
 
   return (
     <>
@@ -39,29 +103,31 @@ function App() {
 
 
       {/*                  Header                 */}
-      <header className="flex justify-center">
-        <PillNav
-          logo={"logo.svg"}
-          logoAlt="Company Logo"
-          items={[
-            { label: 'Home', href: '/' },
-            { label: 'About', href: '/about' },
-            { label: 'Services', href: '/services' },
-            { label: 'Contact', href: '/contact' }
-          ]}
-          activeHref="/"
-          className="custom-nav"
-          ease="power2.easeOut"
-          baseColor="#000000"
-          pillColor="#ffffff"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#000000"
-        />
-      </header>
+      {!showDock && (
 
+        <header className=" w-full top-0 fixed flex justify-center z-[1000]">
+          <PillNav
+            logo={"logo.svg"}
+            logoAlt="Company Logo"
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'About', href: '/about' },
+              { label: 'Services', href: '/services' },
+              { label: 'Contact', href: '/contact' }
+            ]}
+            activeHref="/"
+            className="custom-nav"
+            ease="power2.easeOut"
+            baseColor="#000000"
+            pillColor="#ffffff"
+            hoveredPillTextColor="#ffffff"
+            pillTextColor="#000000"
+          />
+        </header>
+      )}
       <HeroSection />
 
-   
+
 
 
 
@@ -71,6 +137,26 @@ function App() {
       <GallarySection />
 
 
+
+      {/* Dock with smooth show/hide animation */}
+      <AnimatePresence>
+        {showDock && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[999]"
+          >
+            <Dock
+              items={dockItems}
+              position="bottom"
+              magnification={70}
+              baseItemSize={50}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
 
       {/* 
@@ -129,4 +215,4 @@ function App() {
 
 
 
-export default App
+export default App;

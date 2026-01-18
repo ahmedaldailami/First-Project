@@ -2,13 +2,25 @@
 import { useTranslation } from "react-i18next";
 import ScrollFloat from "./text/ScrollFloat";
 import BlurText from "./text/BlurText";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Marquee } from "./Marquee";
+import Dock from "./dock";
 
 export const SkillsSection = () => {
   const { t } = useTranslation();
   const lang = document.documentElement.lang;
 
+
+  const trustedLogosText = [
+    'HTML5',
+    'Css3',
+    'JavaScript',
+    'React',
+    'Tailwind CSS',
+    'Git/GitHub',
+    'Figma',
+    'VS Code',
+  ];
 
 
 
@@ -55,17 +67,25 @@ export const SkillsSection = () => {
       </div>
       {/*           End Section Header         */}
 
-      <Marquee />
+      {/* <Marquee /> */}
 
-      <div className="text-center mt-12">
-          <a
-          className="custom-card w-fit flex items-center mx-auto gap-2"
-            target="_blank"
-            href="https://github.com/anassultanali"
+
+      <div className="flex flex-wrap justify-center gap-2">
+        {trustedLogosText.map((skill, i) => (
+          <motion.div key={i} className="w-fit font-bold p-3 border border-white bg-black/10  max-md:mt-10"
+            initial={{ y: 60, opacity: 0 }
+            }
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
           >
-            {t("projects.btn")} 
-          </a>
-        </div>
+            {skill}
+          </motion.div>
+        ))}
+      </div>
+
+
+
 
     </section >
   );
