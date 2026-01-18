@@ -57,6 +57,15 @@ export const SkillsSection = () => {
 
       <Marquee />
 
+      <div className="text-center mt-12">
+          <a
+          className="custom-card w-fit flex items-center mx-auto gap-2"
+            target="_blank"
+            href="https://github.com/anassultanali"
+          >
+            {t("projects.btn")} 
+          </a>
+        </div>
 
     </section >
   );
