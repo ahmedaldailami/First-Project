@@ -104,10 +104,9 @@ function App() {
 
       {/*                  Header                 */}
       {!showDock && (
-
         <header className=" w-full top-0 fixed flex justify-center z-[1000]">
           <PillNav
-            logo={"logo.svg"}
+            logo={"vite.svg"}
             logoAlt="Company Logo"
             items={[
               { label: 'Home', href: '/' },
@@ -116,12 +115,12 @@ function App() {
               { label: 'Contact', href: '/contact' }
             ]}
             activeHref="/"
-            className="custom-nav"
+            className="  rounded-2xl backdrop-blur-md"
             ease="power2.easeOut"
-            baseColor="#000000"
-            pillColor="#ffffff"
-            hoveredPillTextColor="#ffffff"
-            pillTextColor="#000000"
+            baseColor="var(--foreground)"
+            pillColor="var(--background)"
+            hoveredPillTextColor="var(--background)"
+            pillTextColor="var(--background)"
           />
         </header>
       )}

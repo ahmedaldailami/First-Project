@@ -253,7 +253,7 @@ const PillNav = ({
     const isRouterLink = href => href && !isExternalLink(href);
 
     const cssVars = {
-        ['--base']: baseColor,
+        ['--base']: "#0101",
         ['--pill-bg']: pillColor,
         ['--hover-text']: hoveredPillTextColor,
         ['--pill-text']: resolvedPillTextColor,

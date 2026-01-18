@@ -72,7 +72,7 @@ export const SkillsSection = () => {
 
       <div className="flex flex-wrap justify-center gap-2">
         {trustedLogosText.map((skill, i) => (
-          <motion.div key={i} className="w-fit font-bold p-3 border border-white bg-black/10  max-md:mt-10"
+          <motion.div key={i} className="w-fit font-bold p-3 border border-white bg-black/10 max-md:mt-10 "
             initial={{ y: 60, opacity: 0 }
             }
             whileInView={{ y: 0, opacity: 1 }}
