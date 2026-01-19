@@ -10,7 +10,7 @@ export const HeroSection = () => {
 
   return (
     <motion.div
-      id="hero"
+      id="Home"
       className="text-foreground bg-transparent flex flex-col md:flex-row 
       items-center justify-center max-w-7xl mx-auto w-full my-15 sm:py-30"
       initial={{ opacity: 0 }}

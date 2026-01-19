@@ -253,7 +253,7 @@ const PillNav = ({
     const isRouterLink = href => href && !isExternalLink(href);
 
     const cssVars = {
-        ['--base']: "#0101",
+        ['--base']: baseColor,
         ['--pill-bg']: pillColor,
         ['--hover-text']: hoveredPillTextColor,
         ['--pill-text']: resolvedPillTextColor,
@@ -264,9 +264,9 @@ const PillNav = ({
     };
 
     return (
-        <div className="absolute top-[1em] z-[1000] w-full left-0 md:w-auto md:left-auto">
+        <div className="absolute top-[1em] z-[1000] w-full left-0 md:w-auto md:left-auto ">
             <nav
-                className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-4 md:px-0 ${className}`}
+                className={` bg-[#0101] w-full md:w-max flex items-center justify-between md:justify-start box-border p-2 md:px-0 ${className}`}
                 aria-label="Primary"
                 style={cssVars}
             >
@@ -418,9 +418,9 @@ const PillNav = ({
                         }}
                     >
                         {theme === "light" ?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun text-gray-800 dark:text-white" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sun text-gray-800 dark:text-white" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
                             :
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon text-gray-800 dark:text-white" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-moon text-gray-800 dark:text-white" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
                         }
                     </button>
 
@@ -428,12 +428,14 @@ const PillNav = ({
 
 
 
+                            {/* language Toggle Button */}
                     <div className="glass-radio-group">
+                        
                         <input defaultChecked={false} type="radio" name="plan" />
                         <label
                             onClick={() => changeLanguage(languages[1].code)}
                         >
-                            {t("navbar.langAR")}
+                            {t("navbar.langAR").slice(0,2)}
                         </label>
 
                         <input defaultChecked={true} type="radio" name="plan" id="glass-platinum" />
@@ -441,7 +443,7 @@ const PillNav = ({
                             onClick={() => changeLanguage(languages[0].code)}
                             htmlFor="glass-platinum"
                         >
-                            {t("navbar.langEN")}
+                            {t("navbar.langEN").slice(0, 2)}
                         </label>
 
                         <div className="glass-glider"></div>

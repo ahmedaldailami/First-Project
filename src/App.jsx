@@ -61,28 +61,33 @@ function App() {
   const dockItems = [
     {
       // icon: <Home size={24} />,
+      icon: <p >🏠</p>,
       label: "Home",
-      onClick: () => scrollToSection("home"),
+      onClick: () => scrollToSection("Home"),
     },
     {
       // icon: <User size={24} />,
+      icon: <p>👤</p>,
       label: "About",
       onClick: () => scrollToSection("about"),
     },
     {
       // icon: <GraduationCap size={24} />,
-      label: "Education",
-      onClick: () => scrollToSection("education"),
+      icon: <p>⌨️</p>,
+      label: "Skills",
+      onClick: () => scrollToSection("skills"),
     },
     {
       // icon: <Briefcase size={24} />,
-      label: "Career",
-      onClick: () => scrollToSection("career"),
+      icon: <p>💻</p>,
+      label: "Projects",
+      onClick: () => scrollToSection("Projects"),
     },
     {
       // icon: <FolderKanban size={24} />,
-      label: "Projects",
-      onClick: () => scrollToSection("projects"),
+      icon: <p>🖼️</p>,
+      label: "Gallary",
+      onClick: () => scrollToSection("Gallary"),
     },
   ];
 
@@ -115,7 +120,7 @@ function App() {
               { label: 'Contact', href: '/contact' }
             ]}
             activeHref="/"
-            className="  rounded-2xl backdrop-blur-md"
+            className="rounded-full border-[1px] border-gray-200 dark:border-gray-700 backdrop-blur-xl"
             ease="power2.easeOut"
             baseColor="var(--foreground)"
             pillColor="var(--background)"

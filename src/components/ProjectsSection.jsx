@@ -93,7 +93,7 @@ export const ProjectsSection = () => {
     (projects) => activeCategory === t("projects.all") || projects.category === activeCategory
   );
   return (
-    <section id="projectss" className="py-24 px-4 relative bg-secondary/30">
+    <section id="Projects" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
 
         {/*           start Section Header         */}
