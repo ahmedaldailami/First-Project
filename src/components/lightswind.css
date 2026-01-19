@@ -165,11 +165,7 @@
 
 /* Animated Gradient Border Button Property and Animation */
 /* @property MUST be defined at the global scope, not inside a rule */
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
-}
+
 @keyframes bg-spin {
   to {
     --border-angle: 1turn;
@@ -423,26 +419,7 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Animated Gradient Border Button Styles */
-.gradient-border {
-  --border-angle: 0turn;
-  background:
-    conic-gradient(from var(--border-angle), #000, #000) padding-box,
-    conic-gradient(
-        from var(--border-angle),
-        transparent 25%,
-        #08f,
-        rgb(1, 206, 46) 99%,
-        transparent
-      )
-      border-box;
-  animation: bg-spin 3s linear infinite;
-  border: 1px solid transparent;
-  background-origin: border-box;
-}
-.gradient-border:hover {
-  animation-play-state: paused;
-}
+
 
 /* Animated Range Input Styles */
 .animatedRangeInput .animatedRangeInputLevel::-webkit-slider-thumb {
@@ -772,19 +749,6 @@ body {
   animation: AnimatedCartBtntxt2 2s ease-in-out forwards;
 }
 
-/* Card Hover Effect */
-.card-hover {
-  transition-property: transform;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-  transform: none;
-}
-.card-hover:hover {
-  transform: scale(1.02);
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
 /* Toggle Switch Component */
 .toggle-switch {

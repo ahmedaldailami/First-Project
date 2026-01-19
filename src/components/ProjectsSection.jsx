@@ -142,10 +142,10 @@ export const ProjectsSection = () => {
               key={key}
               onClick={() => setActiveCategory(category)}
               className={
-                `px-5 py-2 duration-300 capitalize rounded-2xl
+                `px-5 py-2 duration-300 capitalize rounded-2xl hover:-translate-y-2 hover:scale-110 
                 ${activeCategory === category
-                  ? " gradient-border"
-                  : "neon-pulse"}`
+                  ? " gradient-border text-black"
+                  : ""}`
               }
             >
               {category}

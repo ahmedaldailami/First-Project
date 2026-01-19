@@ -33,6 +33,29 @@
 } */
 
 
+
+
+/* Animated Gradient Border Button Property and Animation */
+/* @property MUST be defined at the global scope, not inside a rule */
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+}
+
+/* Dark theme variables */
+.dark {
+    /* HSL values for theme colors in dark mode */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+}
 * {
     font-family: "Geist Sans", sans-serif !important;
 }
@@ -56,7 +79,41 @@
     /* Use border color */
 }
 
+/* Card Hover Effect */
+.card-hover {
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    transform: none;
+}
 
+.card-hover:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Animated Gradient Border Button Styles */
+.gradient-border {
+    --border-angle: 0turn;
+    background:
+        /* conic-gradient(from var(--border-angle),from var(--gold), var(--gold)) padding-box, */
+        conic-gradient(from var(--border-angle),#fff, #fff) padding-box,
+        conic-gradient(from var(--border-angle),
+            transparent 25%,
+            #08f,
+            rgb(1, 206, 46) 99%,
+            transparent) border-box;
+    animation: bg-spin 3s linear infinite;
+    border: 2px solid transparent;
+    background-origin: border-box;
+}
+
+.gradient-border:hover {
+    animation-play-state: paused;
+}
 
 
 
