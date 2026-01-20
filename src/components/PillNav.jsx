@@ -47,14 +47,28 @@ const PillNav = ({
 
 
 
+    const [language, setLanguage] = useState(() => {
+        return localStorage.getItem("language") || "en";
+    });
+
+
+    // language toggle
+    useEffect(() => {
+        localStorage.setItem("language", language);
+    }, [language]);
+
+
+
 
     // change lang
     const { t, i18n } = useTranslation();
 
     const changeLanguage = (lang) => {
+        // setLanguage(lang);
         i18n.changeLanguage(lang);
         document.dir = lang === "ar" ? "rtl" : "ltr";
         document.documentElement.lang = lang;
+
         console.log(lang);
     };
 
@@ -363,8 +377,8 @@ const PillNav = ({
                                     </span>
                                     {isActive && (
                                         <span
-                                            className="absolute left-1/2 -bottom-[6px] -translate-x-1/2 w-3 h-3 rounded-full z-[4]"
-                                            style={{ background: 'var(--base, #000)' }}
+                                            className="absolute bg-foreground left-1/2 -bottom-[6px] -translate-x-1/2 w-3 h-3 rounded-full z-[4]"
+                                            // style={{ background: 'var(--base, #000)' }}
                                             aria-hidden="true"
                                         />
                                     )}
@@ -410,7 +424,7 @@ const PillNav = ({
                     {/* Theme Toggle Button */}
                     <button
                         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                        className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+                        className="rounded-full p-2 m-2 inline-flex items-center justify-center overflow-hidden"
                         style={{
                             width: 'var(--nav-h)',
                             height: 'var(--nav-h)',
@@ -428,32 +442,26 @@ const PillNav = ({
 
 
 
-                            {/* language Toggle Button */}
+                    {/*          language Toggle Button         */}
                     <div className="glass-radio-group">
-                        
-                        <input defaultChecked={false} type="radio" name="plan" />
+                        <input defaultChecked={false} type="radio" name="plan" id="glass-gold" />
                         <label
-                            onClick={() => changeLanguage(languages[1].code)}
+                            onClick={() => changeLanguage("ar")}
+                            htmlFor="glass-gold"
                         >
-                            {t("navbar.langAR").slice(0,2)}
+                            {t("navbar.langAR")}
                         </label>
 
                         <input defaultChecked={true} type="radio" name="plan" id="glass-platinum" />
                         <label
-                            onClick={() => changeLanguage(languages[0].code)}
+                            onClick={() => changeLanguage("en")}
                             htmlFor="glass-platinum"
                         >
-                            {t("navbar.langEN").slice(0, 2)}
+                            {t("navbar.langEN")}
                         </label>
 
                         <div className="glass-glider"></div>
                     </div>
-
-
-
-
-
-
 
 
 
@@ -474,19 +482,17 @@ const PillNav = ({
                     }}
                 >
                     <span
-                        className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-                        style={{ background: 'var(--pill-bg, #fff)' }}
+                        className="hamburger-line bg-foreground w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
                     />
                     <span
-                        className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-                        style={{ background: 'var(--pill-bg, #fff)' }}
+                        className="hamburger-line  bg-foreground w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
                     />
                 </button>
             </nav>
 
             <div
                 ref={mobileMenuRef}
-                className="md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
+                className="md:hidden backdrop-blur-2xl absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
                 style={{
                     ...cssVars,
                     background: 'var(--base, #f0f0f0)'
@@ -513,8 +519,9 @@ const PillNav = ({
                         return (
                             <li key={item.href}>
                                 {isRouterLink(item.href) ? (
-                                    <Link
-                                        to={item.href}
+                                    <a
+                                        // to={item.href}
+                                        href={item.href}
                                         className={linkClasses}
                                         style={defaultStyle}
                                         onMouseEnter={hoverIn}
@@ -522,7 +529,7 @@ const PillNav = ({
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {item.label}
-                                    </Link>
+                                    </a>
                                 ) : (
                                     <a
                                         href={item.href}
@@ -539,18 +546,53 @@ const PillNav = ({
                         );
                     })}
                 </ul>
-                {/* Theme Toggle Button */}
-                <button
-                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                    className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
-                    style={{
-                        width: 'var(--nav-h)',
-                        height: 'var(--nav-h)',
-                        background: 'var(--base, #000)'
-                    }}
-                >
-                    {theme}
-                </button>
+
+
+                <div className='flex justify-center items-center'>
+
+                    {/* Theme Toggle Button */}
+                    <button
+                        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                        className="rounded-full p-2 m-2 inline-flex items-center justify-center overflow-hidden"
+                        style={{
+                            width: 'var(--nav-h)',
+                            height: 'var(--nav-h)',
+                            background: 'var(--base, #000)'
+                        }}
+                    >
+                        {theme === "light" ?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sun text-gray-800 dark:text-white" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                            :
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-moon text-gray-800 dark:text-white" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+                        }
+                    </button>
+
+
+
+
+
+                    {/*          language Toggle Button        */}
+                    <div className="glass-radio-group">
+                        <input defaultChecked={false} type="radio" name="plan" id="glass-gold" />
+                        <label
+                            onClick={() => changeLanguage(languages[1].code)}
+                            htmlFor="glass-gold"
+                        >
+                            {t("navbar.langAR")}
+                        </label>
+
+                        <input defaultChecked={true} type="radio" name="plan" id="glass-platinum" />
+                        <label
+                            onClick={() => changeLanguage(languages[0].code)}
+                            htmlFor="glass-platinum"
+                        >
+                            {t("navbar.langEN")}
+                        </label>
+
+                        <div className="glass-glider"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

@@ -114,12 +114,13 @@ function App() {
             logo={"vite.svg"}
             logoAlt="Company Logo"
             items={[
-              { label: 'Home', href: '/' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' },
-              { label: 'Contact', href: '/contact' }
+              { label: 'Home', href: '#Home' },
+              { label: 'About', href: '#about' },
+              { label: 'Skills', href: '#skills' },
+              { label: 'Projects', href: '#Projects'},
+              { label: 'Gallary', href: '#Gallary' }
             ]}
-            activeHref="/"
+            activeHref="#Home"
             className="rounded-full border-[1px] border-gray-200 dark:border-gray-700 backdrop-blur-xl"
             ease="power2.easeOut"
             baseColor="var(--foreground)"
