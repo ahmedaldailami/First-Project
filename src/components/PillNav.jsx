@@ -52,24 +52,23 @@ const PillNav = ({
     });
 
 
+    const { t, i18n } = useTranslation();
     // language toggle
     useEffect(() => {
+        i18n.changeLanguage(language);
+        document.dir = language === "ar" ? "rtl" : "ltr";
+        document.documentElement.lang = language;
         localStorage.setItem("language", language);
-    }, [language]);
+    }, [language, i18n]);
 
 
 
 
     // change lang
-    const { t, i18n } = useTranslation();
 
     const changeLanguage = (lang) => {
-        // setLanguage(lang);
-        i18n.changeLanguage(lang);
-        document.dir = lang === "ar" ? "rtl" : "ltr";
-        document.documentElement.lang = lang;
 
-        console.log(lang);
+
     };
 
     const languages = [
@@ -443,23 +442,23 @@ const PillNav = ({
 
 
                     {/*          language Toggle Button         */}
-                    <div className="glass-radio-group">
-                        <input defaultChecked={false} type="radio" name="plan" id="glass-gold" />
+                    <div className="glass-radio-group ">
+                        <input defaultChecked={language === "ar"? true : false } type="radio" name="plan" id="glass-silver" />
                         <label
-                            onClick={() => changeLanguage("ar")}
+                            onClick={() => setLanguage("ar")}
                             htmlFor="glass-gold"
                         >
                             {t("navbar.langAR")}
                         </label>
 
-                        <input defaultChecked={true} type="radio" name="plan" id="glass-platinum" />
+                        <input defaultChecked={language === "en" ? true : false} type="radio" name="plan" id="glass-platinum" />
                         <label
-                            onClick={() => changeLanguage("en")}
+                            onClick={() => setLanguage("en")}
                             htmlFor="glass-platinum"
                         >
                             {t("navbar.langEN")}
                         </label>
-
+                        {language === "ar" ? <div className="glass-glider silver"></div> : <div className="glass-glider platinum"></div>} 
                         <div className="glass-glider"></div>
                     </div>
 
@@ -571,24 +570,25 @@ const PillNav = ({
 
 
 
-                    {/*          language Toggle Button        */}
-                    <div className="glass-radio-group">
-                        <input defaultChecked={false} type="radio" name="plan" id="glass-gold" />
+
+                    {/*          language Toggle Button         */}
+                    <div className="glass-radio-group ">
+                        <input defaultChecked={language === "ar" ? true : false} type="radio" name="plan" id="glass-silver" />
                         <label
-                            onClick={() => changeLanguage(languages[1].code)}
+                            onClick={() => setLanguage("ar")}
                             htmlFor="glass-gold"
                         >
                             {t("navbar.langAR")}
                         </label>
 
-                        <input defaultChecked={true} type="radio" name="plan" id="glass-platinum" />
+                        <input defaultChecked={language === "en" ? true : false} type="radio" name="plan" id="glass-platinum" />
                         <label
-                            onClick={() => changeLanguage(languages[0].code)}
+                            onClick={() => setLanguage("en")}
                             htmlFor="glass-platinum"
                         >
                             {t("navbar.langEN")}
                         </label>
-
+                        {language === "ar" ? <div className="glass-glider silver"></div> : <div className="glass-glider platinum"></div>}
                         <div className="glass-glider"></div>
                     </div>
                 </div>
