@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import DomeGallery from "./DomeGallery";
 import BlurText from "./text/BlurText";
 import { useTranslation } from "react-i18next";
+import { HeadTitle } from "./HeadTitle";
 
 export const GallarySection = () => {
   const { t } = useTranslation();
@@ -22,23 +23,10 @@ export const GallarySection = () => {
       }}
     >
 
-      <div className="mb-12 flex justify-center ">
-        <BlurText
-          text="My"
-          delay={150}
-          animateBy="litters"
-          direction="top"
-          className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-        />
-        <BlurText
-          text=" Gallary"
-          delay={150}
-          animateBy="litter"
-          direction="top"
-          className="text-3xl mb-8 md:text-4xl font-bold"
-        />
-      </div>
 
+      {/*           start Section Header         */}
+      <HeadTitle Section="gallary" />
+      {/*           End Section Header         */}
 
       <DomeGallery
       />

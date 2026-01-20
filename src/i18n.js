@@ -54,6 +54,10 @@ i18n.use(initReactI18next).init({
           all: "All",
           tools: "Tools",
         },
+        gallary: {
+          title1: " My ",
+          title2: "Gallary"
+        },
         projects: {
           title1: "Featured ",
           title2: "Projects",
@@ -151,6 +155,10 @@ i18n.use(initReactI18next).init({
           title2: "التفنيات",
           all: "الكل",
           tools: "التفنيات",
+        },
+        gallary: {
+          title1: " معرض  ",
+          title2: "الصور"
         },
         projects: {
           title1: " المشاريع ",

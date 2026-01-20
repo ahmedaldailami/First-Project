@@ -5,6 +5,7 @@ import MagicBento from "./MagicBento";
 import TiltedCard from "./TiltedCard";
 import { motion } from "framer-motion";
 import BlurText from "./text/BlurText";
+import { HeadTitle } from "./HeadTitle";
 
 
 
@@ -97,43 +98,7 @@ export const ProjectsSection = () => {
       <div className="container mx-auto max-w-5xl">
 
         {/*           start Section Header         */}
-        <div className="mb-12 flex justify-center ">
-          {lang === "en" ?
-            <>
-              <BlurText
-                text={t("projects.title1")}
-                delay={150}
-                animateBy="litter"
-                direction="top"
-                className="text-3xl mb-8 md:text-4xl font-bold"
-              />
-              <BlurText
-                text={t("projects.title2")}
-                delay={200}
-                animateBy="litters"
-                direction="bottom"
-                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-              />
-            </>
-            :
-            <>
-              <BlurText
-                text={t("projects.title1")}
-                delay={500}
-                animateBy="words"
-                direction="top"
-                className="text-3xl mb-8 md:text-4xl font-bold"
-              />
-              <BlurText
-                text={t("projects.title2")}
-                delay={500}
-                animateBy="words"
-                direction="bottom"
-                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-              />
-            </>
-          }
-        </div>
+        <HeadTitle Section="projects" />
         {/*           End Section Header         */}
 
         <div className="flex flex-wrap justify-center md:gap-4 mb-12">

@@ -5,6 +5,7 @@ import BlurText from "./text/BlurText";
 import { AnimatePresence, motion } from "framer-motion";
 import { Marquee } from "./Marquee";
 import Dock from "./dock";
+import { HeadTitle } from "./HeadTitle";
 
 export const SkillsSection = () => {
   const { t } = useTranslation();
@@ -27,47 +28,14 @@ export const SkillsSection = () => {
   return (
     <section id="skills" className="py-30 px-4 relative">
 
-      {/*          start Section Header         */}
-      <div className="mb-12 flex justify-center ">
-        {lang === "en" ?
-          <>
-            <BlurText
-              text={t("skills.title1")}
-              delay={150}
-              animateBy="litter"
-              direction="top"
-              className="text-3xl mb-8 md:text-4xl font-bold"
-            />
-            <BlurText
-              text={t("skills.title2")}
-              delay={500}
-              animateBy="litters"
-              direction="bottom"
-              className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-            />
-          </>
-          :
-          <>
-            <BlurText
-              text={t("skills.title1")}
-              delay={500}
-              animateBy="words"
-              direction="top"
-              className="text-3xl mb-8 md:text-4xl font-bold"
-            />
-            <BlurText
-              text={t("skills.title2")}
-              delay={500}
-              animateBy="words"
-              direction="bottom"
-              className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-            />
-          </>
-        }
-      </div>
+      {/*           start Section Header         */}
+      <HeadTitle Section="skills" />
       {/*           End Section Header         */}
 
-      {/* <Marquee /> */}
+
+
+      <Marquee />
+
 
 
       <div className="flex flex-wrap justify-center gap-2">

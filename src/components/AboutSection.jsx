@@ -3,55 +3,24 @@ import { useTranslation } from "react-i18next";
 import ScrollFloat from "./text/ScrollFloat";
 import BlurText from "./text/BlurText";
 import { motion } from "framer-motion";
+import { HeadTitle } from "./HeadTitle";
 
 export const AboutSection = () => {
   const { t } = useTranslation();
   const lang = document.documentElement.lang;
 
- 
+
 
 
   return (
     <section id="about" className="py-30 px-4 relative">
       {" "}
       <div className="container mx-auto max-w-5xl">
-        <div className="mb-12 flex justify-center ">
-          {lang === "en" ?
-            <>
-              <BlurText
-                text={t("about.title1")}
-                delay={150}
-                animateBy="litter"
-                direction="top"
-                className="text-3xl mb-8 md:text-4xl font-bold"
-              />
-              <BlurText
-                text={t("about.title2")}
-                delay={500}
-                animateBy="litters"
-                direction="bottom"
-                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-              />
-            </>
-            :
-            <>
-              <BlurText
-                text={t("about.title1")}
-                delay={500}
-                animateBy="words"
-                direction="top"
-                className="text-3xl mb-8 md:text-4xl font-bold"
-              />
-              <BlurText
-                text={t("about.title2")}
-                delay={500}
-                animateBy="words"
-                direction="bottom"
-                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
-              />
-            </>
-}
-        </div>
+
+        {/*           start Section Header         */}
+        <HeadTitle Section="about" />
+        {/*           End Section Header         */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             {lang === "en" ?
@@ -139,7 +108,7 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
-     
+
     </section >
   );
 };
