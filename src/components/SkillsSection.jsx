@@ -1,15 +1,10 @@
-// import { Briefcase, Code, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import ScrollFloat from "./text/ScrollFloat";
-import BlurText from "./text/BlurText";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Marquee } from "./Marquee";
-import Dock from "./dock";
 import { HeadTitle } from "./HeadTitle";
 
 export const SkillsSection = () => {
   const { t } = useTranslation();
-  const lang = document.documentElement.lang;
 
 
   const trustedLogosText = [

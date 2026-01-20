@@ -1,7 +1,6 @@
 // import { Briefcase, Code, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ScrollFloat from "./text/ScrollFloat";
-import BlurText from "./text/BlurText";
 import { motion } from "framer-motion";
 import { HeadTitle } from "./HeadTitle";
 

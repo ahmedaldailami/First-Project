@@ -1,22 +1,19 @@
 import { useState } from "react";
-// import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
-import MagicBento from "./MagicBento";
 import TiltedCard from "./TiltedCard";
 import { motion } from "framer-motion";
-import BlurText from "./text/BlurText";
 import { HeadTitle } from "./HeadTitle";
 
 
 
 export const ProjectsSection = () => {
   const { t } = useTranslation();
-  const lang = document.documentElement.lang;
 
   const projects = [
     {
       id: 1,
-      category: "backend",
+      category: "HTML&Css",
+      theme: "light",
       title: t("projects.project1.title"),
       description: t("projects.project1.sub"),
       image: "/projects/project1.png",
@@ -26,7 +23,8 @@ export const ProjectsSection = () => {
     },
     {
       id: 2,
-      category: "backend",
+      category: "HTML&Css",
+      theme: "light",
       title: t("projects.project2.title"),
       description: t("projects.project2.sub"),
       image: "/projects/project2.png",
@@ -36,7 +34,8 @@ export const ProjectsSection = () => {
     },
     {
       id: 3,
-      category: "backend",
+      category: "HTML&Css",
+      theme: "light",
       title: t("projects.project3.title"),
       description: t("projects.project3.sub"),
       image: "/projects/project3.png",
@@ -45,8 +44,9 @@ export const ProjectsSection = () => {
       githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
     },
     {
-      id: 3,
-      category: "frontend",
+      id: 4,
+      category: "HTML&Css",
+      theme: "dark",
       title: t("projects.project3.title"),
       description: t("projects.project3.sub"),
       image: "/projects/project4.png",
@@ -55,8 +55,9 @@ export const ProjectsSection = () => {
       githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
     },
     {
-      id: 4,
-      category: "frontend",
+      id: 5,
+      category: "JS",
+      theme: "dark",
       title: t("projects.project3.title"),
       description: t("projects.project3.sub"),
       image: "/projects/project5.png",
@@ -65,8 +66,9 @@ export const ProjectsSection = () => {
       githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
     },
     {
-      id: 5,
-      category: "frontend",
+      id: 6,
+      category: "JS",
+      theme: "dark",
       title: t("projects.project3.title"),
       description: t("projects.project3.sub"),
       image: "/projects/project6.png",
@@ -75,8 +77,9 @@ export const ProjectsSection = () => {
       githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
     },
     {
-      id: 6,
-      category: "frontend",
+      id: 7,
+      category: "JS",
+      theme: "dark",
       title: t("projects.project3.title"),
       description: t("projects.project1.sub"),
       image: "/projects/project5.png",
@@ -86,12 +89,12 @@ export const ProjectsSection = () => {
     },
   ];
 
-  const categories = [t("projects.all"), "frontend", "backend", t("projects.tools")];
+  const categories = [t("projects.all"), "HTML&Css", "JS", "React"];
 
   const [activeCategory, setActiveCategory] = useState(t("projects.all"));
 
   const filteredprojects = projects.filter(
-    (projects) => activeCategory === t("projects.all") || projects.category === activeCategory
+    (project) => activeCategory === t("projects.all") || project.category === activeCategory
   );
   return (
     <section id="Projects" className="py-24 px-4 relative bg-secondary/30">
@@ -137,8 +140,8 @@ export const ProjectsSection = () => {
             >
               <TiltedCard
                 imageSrc={project.image}
-                altText="Kendrick Lamar - GNX Album Cover"
-                captionText="Kendrick Lamar - GNX"
+                altText="All Right resurved by Ahmed"
+                captionText="All Right resurved by Ahmed"
                 containerHeight="100%"
                 containerWidth="100%"
                 imageHeight="190px"
@@ -186,15 +189,21 @@ export const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* <div className="text-center mt-12">
-          <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
-            target="_blank"
-            href="https://github.com/anassultanali"
-          >
-            {t("projects.btn")} {lang === "en" ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
+        <motion.div className="px-6 py-2 w-fit m-auto my-10 font-bold rounded-full border-[1.5px] border-primarylw text-primarylw hover:scale-110 duration-500"
+
+          initial={{ y: 60, opacity: 0 }
+          }
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
+        >          <a
+          className="cosmic-button w-fit flex items-center mx-auto gap-2"
+          target="_blank"
+          href="https://github.com/ahmedaldailami"
+        >
+            {t("projects.btn")}
           </a>
-        </div> */}
+        </motion.div>
 
 
       </div>

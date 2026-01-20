@@ -75,7 +75,7 @@ i18n.use(initReactI18next).init({
             title: "Movies Recommendation",
             sub: "A Movies Recommendation page using React and Tailwind."
           },
-          btn: "Check My Github"
+          btn: "Check My Github →"
         },
         contact: {
           title1: "Get In ",
@@ -163,7 +163,7 @@ i18n.use(initReactI18next).init({
         projects: {
           title1: " المشاريع ",
           title2: "المميزية",
-          all: "الكل",
+          all: "All",
           sub: "إليكم بعض مشاريعي الأخيرة. تم تصميم كل مشروع بعناية فائقة مع الاهتمام بالتفاصيل والأداء وتجربة المستخدم.",
           project1: {
             title: "نادي محمد علي",
@@ -177,7 +177,7 @@ i18n.use(initReactI18next).init({
             title: "توصيات الأفلام",
             sub: "صفحة توصيات أفلام باستخدام React و Tailwind."
           },
-          btn: "راجع حسابي على Github"
+          btn: "راجع حسابي على Github ←"
         },
         contact: {
           title1: "تواصل  ",

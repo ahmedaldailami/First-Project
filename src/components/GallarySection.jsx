@@ -1,7 +1,5 @@
-// import { Badge } from "../lightswind/badge";
 import { motion } from "framer-motion";
 import DomeGallery from "./DomeGallery";
-import BlurText from "./text/BlurText";
 import { useTranslation } from "react-i18next";
 import { HeadTitle } from "./HeadTitle";
 
