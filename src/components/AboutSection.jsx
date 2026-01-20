@@ -41,7 +41,6 @@ export const AboutSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="px-6 py-2 rounded-full border border-primarylw text-primarylw hover:scale-110 duration-500"
               >
-                {" "}
                 {t("about.contactBtn")}
               </a>
 
@@ -55,11 +54,11 @@ export const AboutSection = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 rounded-t-2xl card-hover">
+            <div className="gradient-border custom-card p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   {/* <Code className="h-6 w-6 text-primary" /> */}
-                  <span className="h-6 w-6" >p</span>
+                  <span className="h-6 w-6 text-primary" >p</span>
 
                 </div>
 
@@ -73,7 +72,7 @@ export const AboutSection = () => {
                 </div>
               </div>
             </div>
-            <div className="gradient-border p-6 rounded-2xl card-hover">
+            <div className="gradient-border custom-card p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   {/* <User className="h-6 w-6 text-primary" /> */}
@@ -88,7 +87,7 @@ export const AboutSection = () => {
                 </div>
               </div>
             </div>
-            <div className="gradient-border p-6 rounded-b-2xl card-hover">
+            <div className="gradient-border custom-card p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   {/* <Briefcase className="h-6 w-6 text-primary" /> */}

@@ -12,7 +12,7 @@ export const HeadTitle = ({ Section }) => {
         <>
 
             {/*           start Section Header         */}
-            <div className="mb-12 flex justify-center ">
+            <div className="mb-2 flex justify-center ">
                 {lang === "en" ?
                     <>
                         <BlurText
@@ -27,7 +27,7 @@ export const HeadTitle = ({ Section }) => {
                             delay={200}
                             animateBy="litters"
                             direction="bottom"
-                            className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+                            className="text-3xl mb-8 md:text-4xl font-bold text-primary"
                         />
                     </>
                     : lang === "ar" ?
@@ -44,7 +44,7 @@ export const HeadTitle = ({ Section }) => {
                                 delay={150}
                                 animateBy="words"
                                 direction="bottom"
-                                className="text-3xl mb-8 md:text-4xl font-bold text-primarylw"
+                                className="text-3xl mb-8 md:text-4xl font-bold text-primary"
                             />
                         </>
                         : <></>

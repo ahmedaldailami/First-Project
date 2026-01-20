@@ -16,6 +16,7 @@ import Dock from "./components/dock"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next"
+import { ContactSection } from "./components/ContactSection"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -142,7 +143,7 @@ function App() {
       <SkillsSection />
       <ProjectsSection />
       <GallarySection />
-
+      <ContactSection />
 
 
       {/* Dock with smooth show/hide animation */}

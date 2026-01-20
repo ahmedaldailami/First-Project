@@ -47,6 +47,12 @@
 :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --primary: 250 47% 60%;
+    --border: 214 32% 91%;
+
+
+  --radius: 2rem;
 }
 
 /* Dark theme variables */
@@ -54,6 +60,9 @@
     /* HSL values for theme colors in dark mode */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
+    --card: 222 47% 8%;
+    --primary: 250 65% 65%;
+    --border: 217 33% 20%;
 
 }
 
@@ -97,11 +106,13 @@
 
 
 /* Animated Gradient Border Button Styles */
+
+
 .gradient-border {
     --border-angle: 0turn;
     background:
         /* conic-gradient(from var(--border-angle),from var(--gold), var(--gold)) padding-box, */
-        conic-gradient(from var(--border-angle), #fff, #fff) padding-box,
+        conic-gradient(from var(--border-angle), hsl(var(--card)), hsl(var(--card)) ) padding-box,
         conic-gradient(from var(--border-angle),
             transparent 25%,
             #08f,
