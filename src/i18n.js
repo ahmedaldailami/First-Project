@@ -14,6 +14,7 @@ i18n.use(initReactI18next).init({
           about: "About",
           skills: "Skills",
           projects: "Projects",
+          gallary: "gallary",
           contact: "Contact",
         },
         hero: {
@@ -118,6 +119,7 @@ i18n.use(initReactI18next).init({
           about: "عني",
           skills: "المهارات",
           projects: "أعمالي",
+          gallary: "المعرض",
           contact: "للتواصل",
         },
         hero: {

@@ -15,6 +15,7 @@ import { AnimatePresence } from "motion/react"
 import Dock from "./components/dock"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -22,10 +23,11 @@ import { motion } from "framer-motion";
 
 
 function App() {
-
+  
   const [showDock, setShowDock] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-
+  
+  const { t } = useTranslation();
 
   // Track scroll direction
   useEffect(() => {
@@ -114,11 +116,11 @@ function App() {
             logo={"vite.svg"}
             logoAlt="Company Logo"
             items={[
-              { label: 'Home', href: '#Home' },
-              { label: 'About', href: '#about' },
-              { label: 'Skills', href: '#skills' },
-              { label: 'Projects', href: '#Projects'},
-              { label: 'Gallary', href: '#Gallary' }
+              { label: t("navbar.home"), href: '#Home' },
+              { label: t("navbar.about"), href: '#about' },
+              { label: t("navbar.skills"), href: '#skills' },
+              { label: t("navbar.projects"), href: '#Projects'},
+              { label: t("navbar.gallary"), href: '#Gallary' }
             ]}
             activeHref="#Home"
             className="rounded-full border-[1px] border-gray-200 dark:border-gray-700 backdrop-blur-xl"
