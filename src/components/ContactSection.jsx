@@ -92,21 +92,24 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            {/* <div className="pt-8">
+            <div className="pt-8">
               <h4 className="font-medium mb-4">{t("contact.socialTitle")}</h4>
               <div className="flex space-x-4 justify-center">
                 <a href="https://www.linkedin.com/in/anas-sultan-502119242/" target="_blank">
-                  <Linkedin />
+                  {/* <Linkedin /> */}
+                  linkedin
                 </a>
                 <a href="https://x.com/anas_sultan_" target="_blank">
-                  <Twitter />
+                  {/* <Twitter /> */}
+                  facebook
                 </a>
                 <a href="https://www.instagram.com/w1n_er_/" target="_blank">
-                  <Instagram />
+                  {/* <Instagram /> */}
+                  whatsup
                 </a>
                 
               </div>
-            </div> */}
+            </div>
           </div>
 
           <div
@@ -121,7 +124,6 @@ export const ContactSection = () => {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  {" "}
                   {t("contact.form.name.title")}
                 </label>
                 <input
@@ -139,7 +141,6 @@ export const ContactSection = () => {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
-                  {" "}
                   {t("contact.form.email.title")}
                 </label>
                 <input
@@ -168,17 +169,17 @@ export const ContactSection = () => {
                   placeholder={t("contact.form.message.PH")}
                 />
               </div>
-
+              
+              <div className="text-center">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
-                )}
-              >
+                className="px-6 py-2 m-auto font-bold rounded-full border-[1.5px] border-primary text-primary hover:scale-110 duration-500"
+                >
                 {isSubmitting ? t("contact.form.btnSending") : t("contact.form.btnSend")}
                 {/* <Send size={16} /> */}
               </button>
+                </div>
             </form>
           </div>
         </div>

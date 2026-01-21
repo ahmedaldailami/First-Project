@@ -3,91 +3,13 @@ import { useTranslation } from "react-i18next";
 import TiltedCard from "./TiltedCard";
 import { motion } from "framer-motion";
 import { HeadTitle } from "./HeadTitle";
-
+import { projects } from "../data/projects";
 
 
 export const ProjectsSection = () => {
   const { t } = useTranslation();
 
-  const projects = [
-    {
-      id: 1,
-      category: "HTML&Css",
-      theme: "light",
-      title: t("projects.project1.title"),
-      description: t("projects.project1.sub"),
-      image: "/projects/project1.png",
-      tags: ["Bootstrab"],
-      demoUrl: "https://anassultanali.github.io/Mohamed-Ali-Club/",
-      githubUrl: "https://github.com/anassultanali/Mohamed-Ali-Club",
-    },
-    {
-      id: 2,
-      category: "HTML&Css",
-      theme: "light",
-      title: t("projects.project2.title"),
-      description: t("projects.project2.sub"),
-      image: "/projects/project2.png",
-      tags: ["Tailwind"],
-      demoUrl: "https://anassultanali.github.io/Landing_page_tailwind/",
-      githubUrl: "https://github.com/anassultanali/Landing_page_tailwind",
-    },
-    {
-      id: 3,
-      category: "HTML&Css",
-      theme: "light",
-      title: t("projects.project3.title"),
-      description: t("projects.project3.sub"),
-      image: "/projects/project3.png",
-      tags: ["React", "Tailwind"],
-      demoUrl: "https://moviesrecommendation1.netlify.app/",
-      githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
-    },
-    {
-      id: 4,
-      category: "HTML&Css",
-      theme: "dark",
-      title: t("projects.project3.title"),
-      description: t("projects.project3.sub"),
-      image: "/projects/project4.png",
-      tags: ["React", "Tailwind"],
-      demoUrl: "https://moviesrecommendation1.netlify.app/",
-      githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
-    },
-    {
-      id: 5,
-      category: "JS",
-      theme: "dark",
-      title: t("projects.project3.title"),
-      description: t("projects.project3.sub"),
-      image: "/projects/project5.png",
-      tags: ["React", "Tailwind"],
-      demoUrl: "https://moviesrecommendation1.netlify.app/",
-      githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
-    },
-    {
-      id: 6,
-      category: "JS",
-      theme: "dark",
-      title: t("projects.project3.title"),
-      description: t("projects.project3.sub"),
-      image: "/projects/project6.png",
-      tags: ["React", "Tailwind"],
-      demoUrl: "https://moviesrecommendation1.netlify.app/",
-      githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
-    },
-    {
-      id: 7,
-      category: "JS",
-      theme: "dark",
-      title: t("projects.project3.title"),
-      description: t("projects.project1.sub"),
-      image: "/projects/project5.png",
-      tags: ["React", "Tailwind"],
-      demoUrl: "https://moviesrecommendation1.netlify.app/",
-      githubUrl: "https://github.com/anassultanali/React-Movies-Recommendation",
-    },
-  ];
+
 
   const categories = [t("projects.all"), "HTML&Css", "JS", "React"];
 
@@ -104,6 +26,8 @@ export const ProjectsSection = () => {
         <HeadTitle Section="projects" />
         {/*           End Section Header         */}
 
+
+          {/*          start  Projects  Catigories        */}
         <div className="flex flex-wrap justify-center md:gap-4 mb-12">
           {categories.map((category, key) => (
             <button
@@ -112,7 +36,7 @@ export const ProjectsSection = () => {
               className={
                 `px-5 py-2 duration-300 capitalize rounded-2xl hover:-translate-y-2 hover:scale-110 
                 ${activeCategory === category
-                  ? " gradient-border text-black"
+                  ? " gradient-border"
                   : ""}`
               }
             >
@@ -120,12 +44,12 @@ export const ProjectsSection = () => {
             </button>
           ))}
         </div>
+        {/*          start  Projects  Catigories        */}
 
+
+
+              {/*            Projects          */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-
-
           {filteredprojects.map((project, key) => (
             <motion.div
               key={key}
@@ -189,7 +113,9 @@ export const ProjectsSection = () => {
           ))}
         </div>
 
-        <motion.div className="px-6 py-2 w-fit m-auto my-10 font-bold rounded-full border-[1.5px] border-primarylw text-primarylw hover:scale-110 duration-500"
+
+        {/*         viwe   my   github      */}
+        <motion.div className="px-6 py-2 w-fit m-auto my-10 font-bold rounded-full border-[1.5px] border-primary text-primary hover:scale-110 duration-500"
 
           initial={{ y: 60, opacity: 0 }
           }
