@@ -64,8 +64,8 @@ export const ProjectsSection = () => {
             >
               <TiltedCard
                 imageSrc={project.image}
-                altText="All Right resurved by Ahmed"
-                captionText="All Right resurved by Ahmed"
+                altText=""
+                captionText={project.title}
                 containerHeight="100%"
                 containerWidth="100%"
                 imageHeight="190px"
