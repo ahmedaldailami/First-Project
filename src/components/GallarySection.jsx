@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import DomeGallery from "./DomeGallery";
-import { useTranslation } from "react-i18next";
 import { HeadTitle } from "./HeadTitle";
 
 export const GallarySection = () => {
-  const { t } = useTranslation();
 
   return (
     <motion.div
