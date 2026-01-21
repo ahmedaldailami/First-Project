@@ -52,7 +52,7 @@
     --border: 214 32% 91%;
 
 
-  --radius: 2rem;
+    --radius: 2rem;
 }
 
 /* Dark theme variables */
@@ -112,7 +112,7 @@
     --border-angle: 0turn;
     background:
         /* conic-gradient(from var(--border-angle),from var(--gold), var(--gold)) padding-box, */
-        conic-gradient(from var(--border-angle), hsl(var(--card)), hsl(var(--card)) ) padding-box,
+        conic-gradient(from var(--border-angle), hsl(var(--card)), hsl(var(--card))) padding-box,
         conic-gradient(from var(--border-angle),
             transparent 25%,
             #08f,
@@ -146,7 +146,11 @@
 
 .animate-marquee {
     display: inline-flex;
-    animation: marquee 16s linear infinite;
+    animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
 }
 
 
