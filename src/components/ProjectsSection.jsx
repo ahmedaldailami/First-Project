@@ -11,7 +11,7 @@ export const ProjectsSection = () => {
 
 
 
-  const categories = [t("projects.all"), "HTML&Css", "JS", "React"];
+  const categories = [t("projects.all"), "HTML&CSS", "JS", "React"];
 
   const [activeCategory, setActiveCategory] = useState(t("projects.all"));
 

@@ -98,9 +98,9 @@ export const HeroSection = () => {
         }}
         transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
       >
-        <div className="w-64 h-64 rounded-full overflow-hidden shadow-lg">
+        <div className="w-64 h-68 rounded-4xl overflow-hidden shadow-lg">
           <img
-            src="/public/user.jpg"
+            src="/public/user2.jpg"
             alt="Ahmed Adnan"
             className="w-full h-full object-cover"
           />

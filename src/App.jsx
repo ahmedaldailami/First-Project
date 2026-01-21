@@ -114,7 +114,7 @@ function App() {
       {!showDock && (
         <header className=" w-full top-0 fixed flex justify-center z-[1000]">
           <PillNav
-            logo={"vite.svg"}
+            logo={"logo.png"}
             logoAlt="Company Logo"
             items={[
               { label: t("navbar.home"), href: '#Home' },
