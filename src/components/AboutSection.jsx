@@ -24,7 +24,7 @@ export const AboutSection = () => {
           <div className="space-y-6">
             {lang === "en" ?
               <ScrollFloat
-                animationDuration={1}
+                animationDuration={1.5``}
                 ease='back.inOut(2)'
                 scrollStart='center bottom+=50%'
                 scrollEnd='bottom bottom-=40%'

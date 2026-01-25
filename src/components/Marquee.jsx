@@ -14,7 +14,7 @@ export const Marquee = ({data}) => {
                 }
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 250, damping: 5, mass: 1 }}
+                transition={{ type: "spring", stiffness: 250, damping: 70 , mass: 1 }}
             >
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="w-full overflow-hidden py-6">
