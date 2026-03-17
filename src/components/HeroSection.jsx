@@ -6,13 +6,11 @@ export const HeroSection = () => {
   const { t } = useTranslation();
   const lang = document.documentElement.lang;
 
-
-
   return (
     <motion.div
       id="Home"
       className="text-foreground bg-transparent flex flex-col md:flex-row 
-      items-center justify-center max-w-7xl mx-auto w-full my-15 sm:py-30"
+      items-center justify-center max-w-7xl mx-auto w-full min-h-dvh my-15 sm:py-30"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -25,7 +23,8 @@ export const HeroSection = () => {
     >
       {/* Left Section */}
       <motion.div
-        className={`flex-1 space-y-4 p-6  ${lang === "en" ? "text-left" : "text-right"}`}
+        className="text-center"
+        // className={`flex-1 space-y-4 p-6  ${lang === "en" ? "text-left" : "text-right"}`}
         initial={false} // so it inherits parent animation
       >
         <motion.h1
@@ -84,11 +83,10 @@ export const HeroSection = () => {
           audiences. Passionate about blending creativity with technology to
           bring ideas to life.
         </motion.p>
-
-
       </motion.div>
+
       {/* Right Section */}
-      <motion.div
+      {/* <motion.div
         className="flex-1 flex justify-center p-6"
         initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
         animate={{
@@ -105,7 +103,7 @@ export const HeroSection = () => {
             className="w-full h-full object-cover"
           />
         </div>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 };
