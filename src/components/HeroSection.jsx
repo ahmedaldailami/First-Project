@@ -8,7 +8,7 @@ export const HeroSection = () => {
 
   return (
     <motion.div
-      id="Home"
+      id="home"
       className="text-foreground bg-transparent flex flex-col md:flex-row 
       items-center justify-center max-w-7xl mx-auto w-full min-h-dvh my-15 sm:py-30"
       initial={{ opacity: 0 }}

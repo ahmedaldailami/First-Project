@@ -17,6 +17,7 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next"
 import { ContactSection } from "./components/ContactSection"
+import Header from "./components/Header"
 
 // import { Sun, Moon } from "lucide-react";
 
@@ -111,7 +112,7 @@ function App() {
 
 
       {/*                  Header                 */}
-      {!showDock && (
+      {/* {!showDock && (
         <header className=" w-full top-0 fixed flex justify-center z-[1000]">
           <PillNav
             logo={"logo.png"}
@@ -132,7 +133,10 @@ function App() {
             pillTextColor="var(--background)"
           />
         </header>
-      )}
+      )} */}
+
+      <Header />
+
       <HeroSection />
 
 

@@ -6,7 +6,7 @@ export const GallarySection = () => {
 
   return (
     <motion.div
-      id="Gallary"
+      id="gallary"
       style={{ width: '100%', height: '100vh' }}
       initial={{ opacity: 0 }}
       animate={{
