@@ -1,14 +1,14 @@
-import { HeroSection } from "./components/HeroSection";
-import Particles from "./components/Particles";
+import { HeroSection } from "./sections/HeroSection";
 import "./App.css";
-import { AboutSection } from "./components/AboutSection";
-import { ProjectsSection } from "./components/ProjectsSection";
-import { GallarySection } from "./components/GallarySection";
-import { SkillsSection } from "./components/SkillsSection";
+import { AboutSection } from "./sections/AboutSection";
+import { ProjectsSection } from "./sections/ProjectsSection";
+import { GallarySection } from "./sections/gallary/GallarySection";
+import { SkillsSection } from "./sections/SkillsSection";
 import { useTranslation } from "react-i18next";
-import { ContactSection } from "./components/ContactSection";
+import { ContactSection } from "./sections/ContactSection";
 import Header from "./components/navigation/Header";
 import Footer from "./components/navigation/Footer";
+import Background from "./components/background/Background";
 
 function App() {
   const { t } = useTranslation();
@@ -16,16 +16,7 @@ function App() {
   return (
     <>
       {/*            Background            */}
-      <Particles
-        particleColors={["#fff", "#fff"]}
-        particleCount={700}
-        particleSpread={10}
-        speed={0.1}
-        particleBaseSize={50}
-        moveParticlesOnHover={true}
-        alphaParticles={false}
-        disableRotation={false}
-      />
+      <Background />
 
       {/*                  Header                 */}
       {/* {!showDock && (
@@ -61,26 +52,7 @@ function App() {
       <GallarySection />
       <ContactSection />
 
-<Footer />
-      
-
-      {/* 
-      <ScrambledText
-        className="scrambled-text-demo"
-        radius={100}
-        duration={1.2}
-        speed={0.5}
-        scrambleChars={".:;!?"}
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Similique pariatur dignissimos porro eius quam doloremque
-        et enim velit nobis maxime.
-      </ScrambledText> */}
-
-      {/* <section className="container m-auto min-h-dvh flex items-center ">
-        
-      
-      </section> */}
+      <Footer />
     </>
   );
 }

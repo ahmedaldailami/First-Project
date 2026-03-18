@@ -11,7 +11,7 @@
 import { useToast } from "../hooks/use-toast";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { HeadTitle } from "./HeadTitle";
+import { HeadTitle } from "../components/HeadTitle";
 
 export const ContactSection = () => {
   const { t } = useTranslation();
@@ -95,7 +95,10 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4">{t("contact.socialTitle")}</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="https://www.linkedin.com/in/anas-sultan-502119242/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/anas-sultan-502119242/"
+                  target="_blank"
+                >
                   {/* <Linkedin /> */}
                   linkedin
                 </a>
@@ -107,7 +110,6 @@ export const ContactSection = () => {
                   {/* <Instagram /> */}
                   whatsup
                 </a>
-                
               </div>
             </div>
           </div>
@@ -116,7 +118,10 @@ export const ContactSection = () => {
             className="bg-card p-8 rounded-lg shadow-2xl"
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-semibold mb-6"> {t("contact.form.title")}</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              {" "}
+              {t("contact.form.title")}
+            </h3>
 
             <form className="space-y-6">
               <div>
@@ -169,17 +174,19 @@ export const ContactSection = () => {
                   placeholder={t("contact.form.message.PH")}
                 />
               </div>
-              
+
               <div className="text-center">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-6 py-2 m-auto font-bold rounded-full border-[1.5px] border-primary text-primary hover:scale-110 duration-500"
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-2 m-auto font-bold rounded-full border-[1.5px] border-primary text-primary hover:scale-110 duration-500"
                 >
-                {isSubmitting ? t("contact.form.btnSending") : t("contact.form.btnSend")}
-                {/* <Send size={16} /> */}
-              </button>
-                </div>
+                  {isSubmitting
+                    ? t("contact.form.btnSending")
+                    : t("contact.form.btnSend")}
+                  {/* <Send size={16} /> */}
+                </button>
+              </div>
             </form>
           </div>
         </div>

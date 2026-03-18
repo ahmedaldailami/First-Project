@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import DomeGallery from "./DomeGallery";
-import { HeadTitle } from "./HeadTitle";
+import { HeadTitle } from "../../components/HeadTitle";
 
 export const GallarySection = () => {
-
   return (
     <motion.div
       id="gallary"
-      style={{ width: '100%', height: '100vh' }}
+      style={{ width: "100%", height: "100vh" }}
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -18,14 +17,11 @@ export const GallarySection = () => {
         },
       }}
     >
-
-
       {/*           start Section Header         */}
       <HeadTitle Section="gallary" />
       {/*           End Section Header         */}
 
-      <DomeGallery
-      />
+      <DomeGallery />
     </motion.div>
   );
 };
