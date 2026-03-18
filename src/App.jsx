@@ -1,9 +1,9 @@
 import { HeroSection } from "./sections/HeroSection";
 import "./App.css";
 import { AboutSection } from "./sections/AboutSection";
-import { ProjectsSection } from "./sections/ProjectsSection";
+import { ProjectsSection } from "./sections/projects/ProjectsSection";
 import { GallarySection } from "./sections/gallary/GallarySection";
-import { SkillsSection } from "./sections/SkillsSection";
+import { SkillsSection } from "./sections/skills/SkillsSection";
 import { useTranslation } from "react-i18next";
 import { ContactSection } from "./sections/ContactSection";
 import Header from "./components/navigation/Header";
