@@ -14,7 +14,7 @@ function App() {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="px-2">
       {/*            Background            */}
       <Background />
 
@@ -53,7 +53,7 @@ function App() {
       <ContactSection />
 
       <Footer />
-    </>
+    </div>
   );
 }
 
